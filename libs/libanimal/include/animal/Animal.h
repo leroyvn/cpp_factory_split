@@ -1,7 +1,3 @@
-//
-// Created by Vincent Leroy on 2019-06-13.
-//
-
 #ifndef FACTORY_SPLIT_ANIMAL_H
 #define FACTORY_SPLIT_ANIMAL_H
 

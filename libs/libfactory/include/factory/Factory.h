@@ -3,6 +3,7 @@
 
 #include <string>
 #include <unordered_map>
+#include <memory>
 #include <cxxabi.h>
 
 std::string demangle(const char *name) {
