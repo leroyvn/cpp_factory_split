@@ -1,12 +1,15 @@
 #include <iostream>
 #include <animal/Animal.h>
 
-class Cat : public Animal::Registrar<Cat> {
+class Cat : public Animal {
   public:
-    Cat(int x) : m_x(x) {}
+    Cat(ARGS i) : Animal(i), m_i(i) {}
 
-    void makeNoise() override { std::cerr << "Cat: " << m_x << "\n"; }
+    void makeNoise() override { std::cerr << "Cat: " << m_i << "\n"; }
 
   private:
-    int m_x;
+    int m_i;
 };
+
+// Register this animal
+ObjectProvider<Cat, Animal> animal_cat("Cat");

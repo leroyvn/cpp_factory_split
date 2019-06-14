@@ -3,8 +3,14 @@
 
 #include <factory/Factory.h>
 
-struct Animal : Factory<Animal, int> {
-    Animal(Key) {}
+struct Animal {
+    // Required for self registering animals
+    typedef int ARGS;
+
+    /// Returns name of this type.
+    static std::string typeName() { return "Animal"; }
+
+    explicit Animal(ARGS i) {}
     virtual void makeNoise() = 0;
     virtual ~Animal() = default;
 };
